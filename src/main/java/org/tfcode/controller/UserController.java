@@ -3,7 +3,7 @@ package org.tfcode.controller;
 import org.tfcode.dto.LoginFormDTO;
 import org.tfcode.dto.Result;
 import org.tfcode.entity.UserInfo;
-import org.tfcode.service.IUserInfoService;
+import org.tfcode.service.UserInfoService;
 import org.tfcode.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @Resource
-    private IUserInfoService userInfoService;
+    private UserInfoService userInfoService;
 
     /**
      * 发送手机验证码

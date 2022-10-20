@@ -5,8 +5,8 @@ import org.tfcode.dto.Result;
 import org.tfcode.entity.Voucher;
 import org.tfcode.mapper.VoucherMapper;
 import org.tfcode.entity.SeckillVoucher;
-import org.tfcode.service.ISeckillVoucherService;
-import org.tfcode.service.IVoucherService;
+import org.tfcode.service.SeckillVoucherService;
+import org.tfcode.service.VoucherService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,10 +22,10 @@ import java.util.List;
  * @since 2021-12-22
  */
 @Service
-public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> implements IVoucherService {
+public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> implements VoucherService {
 
     @Resource
-    private ISeckillVoucherService seckillVoucherService;
+    private SeckillVoucherService seckillVoucherService;
 
     @Override
     public Result queryVoucherOfShop(Long shopId) {

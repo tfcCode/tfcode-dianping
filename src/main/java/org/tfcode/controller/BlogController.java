@@ -6,7 +6,7 @@ import org.tfcode.dto.Result;
 import org.tfcode.dto.UserDTO;
 import org.tfcode.entity.Blog;
 import org.tfcode.entity.User;
-import org.tfcode.service.IBlogService;
+import org.tfcode.service.BlogService;
 import org.tfcode.service.UserService;
 import org.tfcode.utils.SystemConstants;
 import org.tfcode.utils.UserHolder;
@@ -28,7 +28,7 @@ import java.util.List;
 public class BlogController {
 
     @Resource
-    private IBlogService blogService;
+    private BlogService blogService;
     @Resource
     private UserService userService;
 

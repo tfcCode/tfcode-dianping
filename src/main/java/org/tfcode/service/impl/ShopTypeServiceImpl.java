@@ -2,7 +2,7 @@ package org.tfcode.service.impl;
 
 import org.tfcode.entity.ShopType;
 import org.tfcode.mapper.ShopTypeMapper;
-import org.tfcode.service.IShopTypeService;
+import org.tfcode.service.ShopTypeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-12-22
  */
 @Service
-public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> implements IShopTypeService {
+public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> implements ShopTypeService {
 
 }

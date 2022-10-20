@@ -2,7 +2,7 @@ package org.tfcode.service.impl;
 
 import org.tfcode.entity.Blog;
 import org.tfcode.mapper.BlogMapper;
-import org.tfcode.service.IBlogService;
+import org.tfcode.service.BlogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-12-22
  */
 @Service
-public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IBlogService {
+public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements BlogService {
 
 }

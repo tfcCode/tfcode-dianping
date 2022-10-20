@@ -16,6 +16,7 @@ import org.tfcode.mapper.ShopMapper;
 import org.tfcode.service.ShopService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.tfcode.utils.CacheClient;
 import org.tfcode.utils.RedisConstants;
 import org.tfcode.utils.RedisData;
 
@@ -31,16 +32,21 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements Sh
     @Autowired
     private ThreadPoolTaskExecutor threadPoolExecutor;
 
+    @Autowired
+    private CacheClient cacheClient;
+
     @Override
     public Result selectById(Long id) {
         // 缓存穿透
         // Shop shop = queryWithPassThrough(id);
+        Shop shop = cacheClient.queryWithPassThrough(RedisConstants.CACHE_SHOP_KEY, id, Shop.class, RedisConstants.CACHE_SHOP_TTL, TimeUnit.MINUTES,
+                id2 -> getById(id2));
 
         // 缓存击穿：互斥锁
         // Shop shop = queryWithMutex(id);
 
         // 缓存击穿：逻辑过期
-        Shop shop = queryWithLogicalExpireTime(id);
+        // Shop shop = queryWithLogicalExpireTime(id);
         if (shop == null) {
             return Result.fail("店铺不存在！");
         }
