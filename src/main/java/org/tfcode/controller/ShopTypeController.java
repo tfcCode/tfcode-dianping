@@ -1,6 +1,5 @@
 package org.tfcode.controller;
 
-
 import org.tfcode.dto.Result;
 import org.tfcode.entity.ShopType;
 import org.tfcode.service.ShopTypeService;
@@ -11,14 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * <p>
- * 前端控制器
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
- */
 @RestController
 @RequestMapping("/shop-type")
 public class ShopTypeController {
